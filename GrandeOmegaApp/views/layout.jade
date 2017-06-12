@@ -1,0 +1,58 @@
+﻿doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title #{title} - GrandeOmega Analytics
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/dc.css')
+    script(src='/javascripts/jquery-1.10.2.js')
+    script(src='/javascripts/modernizr-2.6.2.js')
+  body
+    .navbar.navbar-fixed-top
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/') Ω - GrandeOmega Analytics
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li
+              a(href='/') Home
+            li
+              a(href='/parser/activities') Activities Parser
+            li
+              a(href='/parser/studentGrades') Grades Parser
+            li
+              a(href='/api/activities') Activities API
+            li
+              a(href='/api/studentGrades') Grades API
+            li
+              a(href='/about') About
+            li
+              a(href='/contact') Contact
+    .container.body-content
+      block content
+      hr
+      footer
+        p &copy; #{year} - Ω - GrandeOmega Analytics
+
+    script(src='/javascripts/bootstrap.js')
+    script(src='/javascripts/respond.js')
+    script(src='/javascripts/d3.js')
+    script(src='/javascripts/crossfilter.js')
+    script(src='/javascripts/dc.js')
+    script(src='/javascripts/select-menu.js')
+    script(src='/javascripts/queue.js')
+    script(src='/javascripts/kmeans.js')
+    script(src='/javascripts/dbscan.js')
+    script(src='/javascripts/knearestneighbor.js')
+    script(src='/javascripts/naive-bayes-classifier.js')
+    script(src='/javascripts/utils.js')
+    script(src='/javascripts/regression.js')
+    script(src='/javascripts/correlation.js')
+    script(src='/javascripts/Dashboard.js')
+    block scripts

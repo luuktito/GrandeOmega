@@ -1,0 +1,16 @@
+{
+  "name": "node-app-test",
+  "version": "0.0.0",
+  "description": "NodeAppTest",
+  "main": "app.js",
+  "author": {
+    "name": "Luuk",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "mongoose": "^4.9.2",
+    "stylus": "*"
+  }
+}

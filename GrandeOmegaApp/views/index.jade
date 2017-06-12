@@ -1,0 +1,153 @@
+﻿extends layout
+
+block content
+  .jumbotron
+    .container
+      h1 GrandeOmega - Analytics
+      p.lead Welcome to the analytics web app of GrandeOmega
+  div(style='height:200px') 
+  
+  #loader
+
+  #charts-container
+    .row
+      .col-md-6
+        h4#total-projects
+          strong Total activities: 
+          span.number-display
+    .row
+      .col-md-9
+        .8u.chart-wrapper#date-chart
+          .chart-title.bold
+            strong Number of assignment attempts per hour over time
+      .col-md-3
+        .dc-chart#attempt-type-chart
+          .chart-title.bold
+            strong Attempt Type:
+    .row
+      .col-md-4#filter-selectors
+        .col-sm-12#class-selector-container
+          .dc-chart#class-selector
+            .chart-title.bold
+              strong Select class: 
+        .col-sm-12#student-selector-container
+          .dc-chart#student-selector
+            .chart-title.bold
+              strong Select student: 
+      .col-md-3
+        .dc-chart#day-of-week-chart
+          .chart-title.bold
+            strong Day of the week: 
+      .col-md-5ths
+        .dc-chart#attempt-type-monday-chart
+          .chart-title.bold
+            strong Attempt Type (Monday): 
+      .col-md-5ths
+        .dc-chart#attempt-type-tuesday-chart
+          .chart-title.bold
+            strong Attempt Type (Tuesday):   
+    .row
+      .col-md-5ths
+        .dc-chart#attempt-type-wednesday-chart
+          .chart-title.bold
+            strong Attempt Type (Wednesday):   
+      .col-md-5ths
+        .dc-chart#attempt-type-thursday-chart
+          .chart-title.bold
+            strong Attempt Type (Thursday):  
+      .col-md-5ths
+        .dc-chart#attempt-type-friday-chart
+          .chart-title.bold
+            strong Attempt Type (Friday):   
+      .col-md-5ths
+        .dc-chart#attempt-type-saturday-chart
+          .chart-title.bold
+            strong Attempt Type (Saturday):   
+      .col-md-5ths
+        .dc-chart#attempt-type-sunday-chart
+          .chart-title.bold
+            strong Attempt Type (Sunday):   
+    .row
+      .col-md-3
+        .dc-chart#grades-pie-chart
+          .chart-title.bold
+            strong Grades Ratio:
+      .col-md-9
+        .8u.chart-wrapper#student-grades-activities-chart
+          .chart-title.bold
+            strong Grades over amount of activities
+    .row
+      .col-md-12
+        .8u.chart-wrapper#success-percentage-by-hour-chart
+          .chart-title.bold
+            strong Completion + Success / Mistake ratio hour of day
+    .row
+      .col-md-12
+        .8u.chart-wrapper#student-grades-chart
+          .chart-title.bold
+            strong Grades per student
+    hr
+    ul.nav.nav-tabs
+      li.active
+        a(data-toggle='tab', href='#clustering') Clustering
+      li
+        a(data-toggle='tab', href='#classification') Classification
+      li
+        a(data-toggle='tab', href='#correlation') Correlation
+      li
+        a(data-toggle='tab', href='#regression') Regression
+    .tab-content
+      #clustering.tab-pane.fade.in.active
+        .row
+          .col-md-12
+            .8u.chart-wrapper#kmeans-successes-grade-chart
+              .chart-title.bold
+                strong Grades over assignment successes per student (K-means)
+        .row
+          .col-md-12
+            .8u.chart-wrapper#dbscan-successes-grade-chart
+              .chart-title.bold
+                strong Grades over assignment successes per student (DBSCAN)
+      #classification.tab-pane.fade
+        .row
+          .col-md-12
+            .8u.chart-wrapper#knearest-mistakes-grade-chart
+              .chart-title.bold
+                strong Grades over assignment mistakes (K Nearest Neighbor using k-means: grades over successes as training set)
+        .row
+          .col-md-12
+            .8u.chart-wrapper#naive-bayes-mistakes-grade-chart
+              .chart-title.bold
+                strong Grades over assignment mistakes (Naive Bayes Classifier using k-means: grades over successes as training set)
+      #correlation.tab-pane.fade
+        .row
+          .col-md-12
+            .8u.chart-wrapper#student-grades-percentage-correlation-chart
+              .chart-title.bold
+                strong Grades over Completion + Success / Mistake ratio (Pearson and Spearman's rank correlation coefficient)
+        .row
+          .col-md-12
+            .8u.chart-wrapper#student-grades-activities-correlation-chart
+              .chart-title.bold
+                strong Grades over total amount of activities (Pearson and Spearman's rank correlation coefficient)
+        .row
+          .col-md-12
+            .8u.chart-wrapper#success-percentage-by-hour-correlation-chart
+              .chart-title.bold
+                strong Completion + Success / Mistake ratio hour of day (Pearson and Spearman's rank correlation coefficient)
+      #regression.tab-pane.fade
+        .row
+          .col-md-12
+            .8u.chart-wrapper#success-percentage-by-day-regression-chart
+              .chart-title.bold
+                strong Completion + Success / Mistake ratio over time (Simple linear regression and logarithmic regression)
+        .row
+          .col-md-12
+            .8u.chart-wrapper#student-grades-percentage-regression-chart
+              .chart-title.bold
+                strong Grades over Completion + Success / Mistake (Simple linear regression and logarithmic regression)
+        .row
+          .col-md-12
+            .8u.chart-wrapper#student-grades-activities-regression-chart
+              .chart-title.bold
+                strong Grades over total amount of activities (Simple linear regression and logarithmic regression)
